@@ -7,7 +7,7 @@ const rollerDerbyNameSchema = new mongoose.Schema({
     required: true,
   },
   lastName: {
-    type: Number,
+    type: String,
     required: true,
   }
 })
