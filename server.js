@@ -21,10 +21,6 @@ const listEndpoints = require("express-list-endpoints");
 app.use(cors())
 app.use(bodyParser.json())
 
-// Start defining your routes here
-// app.get('/', (req, res) => {
-//   res.send('Hello world')
-// })
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -34,9 +30,7 @@ app.get('/', (req, res) => {
 // All names in database
 app.get('/rollerderbynames', async (req, res) => {
   const names = await RollerDerbyName.find()
-  console.log(names)
   res.json(names)
-
 })
 
 
