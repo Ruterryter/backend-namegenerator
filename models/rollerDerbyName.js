@@ -13,3 +13,5 @@ const rollerDerbyNameSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model("RollerDerbyName", rollerDerbyNameSchema);
+// const RollerDerbyName = mongoose.model("RollerDerbyName", rollerDerbyNameSchema);
+// module.exports = RollerDerbyName;

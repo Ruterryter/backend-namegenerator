@@ -34,22 +34,23 @@ app.get('/', (req, res) => {
 // All names in database
 app.get('/rollerderbynames', async (req, res) => {
   const names = await RollerDerbyName.find()
-  console.log(RollerDerbyName)
+  console.log(names)
   res.json(names)
 
 })
 
-app.post('/newname', async (req, res) => {
-  const { firstName, lastName } = req.body
 
+app.post("/newname", async (req, res) => {
   try {
+    const { firstName, lastName } = req.body;
     const rollerDerbyName = await new RollerDerbyName({ firstName, lastName }).save()
-    res.status(201).json(rollerDerbyName)
+    res.status(201).json({ id: rollerDerbyName._id });
   } catch (err) {
-    res.status(400).json({ message: "try aging" })
+    res
+      .status(400)
+      .json({ message: "Could not create new name" });
   }
-})
-
+});
 
 // Start the server
 app.listen(port, () => {
